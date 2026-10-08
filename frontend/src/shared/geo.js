@@ -1,0 +1,3 @@
+export const DISTRICTS={Rohtak:{lat:28.8955,lng:76.6066},Sonipat:{lat:28.9931,lng:77.0151},Karnal:{lat:29.6857,lng:76.9905},Hisar:{lat:29.1492,lng:75.7217},Panipat:{lat:29.3909,lng:76.9635},Gurugram:{lat:28.4595,lng:77.0266},Sirsa:{lat:29.5349,lng:75.0287},Jhajjar:{lat:28.6063,lng:76.6565}}
+export const distanceKm=(a,b)=>{const R=6371,r=x=>x*Math.PI/180,dLa=r(b.lat-a.lat),dLo=r(b.lng-a.lng);const h=Math.sin(dLa/2)**2+Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dLo/2)**2;return Math.round(2*R*Math.asin(Math.sqrt(h))*1.3)}
+export const estimateTransport=(km,qtl)=>Math.ceil(qtl/40)*Math.max(800,Math.round(km*25))

@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+**/dist/
+**/build/
+
+# Vite
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Python virtual environment
+venv/
+.venv/
+env/
+
+# Secrets / credentials
+*.pem
+*.key
+credentials.json
+service-account.json
+
+# Local database files
+*.sqlite
+*.sqlite3
+
+# Old / temporary project copies
+frontend-old/
+_standalone/
+**/_standalone/
