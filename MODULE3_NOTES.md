@@ -1,8 +1,0 @@
-# Module 3 - Market Intel (zip: module3-market-intel)
-Assumptions: backend is ESM; shared/db.js default-exports the mysql2 pool (or `pool`); auth.js exports requireAuth(roles) setting req.user{id,role}; geo.js exports distanceKm; frontend api.js takes full paths (`/api/...`, prefix set in lib.jsx `P`); i18n `t` + optional `useI18n()`; module keys 'm.*' live in lib.jsx (hi+en) so shared i18n needs no edit.
-Endpoints /api/market: GET buyers/match?crop_id | GET/POST buyers/requirements, PATCH|PUT|DELETE buyers/requirements/:id (POST .../:id/delete alias) | GET buyers/incoming (anonymised) | POST buyers/:id/accept-offer {crop_id,quantity_qtl?,route_id?} | GET storage/nearby?crop_id | GET storage/compare?crop_id&days&storage_id? | GET wastage/:crop_id | GET admin/summary?district= | GET admin/gaps | GET health
-Files: backend/modules/market/{index.js,seed.js}; frontend/src/modules/market/{routes.jsx,lib.jsx,pages/{Buyers,Storage,Wastage,Admin}.jsx}
-Frontend paths: /market/buyers (farmer,buyer), /market/storage, /market/wastage (farmer), /market/admin (admin).
-Merge: 1) unzip over repo (delete _standalone/). 2) In server.js: `import market from './modules/market/index.js'; app.use('/api/market', market)`. 3) Module 1 seed.js must call each modules/*/seed.js default export with the pool (idempotent). 4) Add `recharts` to frontend deps. 5) Link nav to /market/* paths.
-Reads only contract tables; admin metrics: wastage diverted = qty of sold txns on grade C crops or processor routes; uplift = (realised/est net - first mandi route net)/mandi net.
-Standalone: `sh _standalone/run.sh` then follow printed steps. Admin KPIs are a guess at the PDF's success metrics (PDF not provided to this chat).
